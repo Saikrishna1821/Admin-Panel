@@ -25,17 +25,16 @@ function NewCard({ title, cardData, handleCard, getData,options}) {
    if(!cardData.id)
    {
     let sendData = await axios.post(
-      "http://localhost:8080/creditCard/addNewCard",
+      `${process.env.REACT_APP_BACKEND_URL}/creditCard/addNewCard`,
       newcard
     );
    }
    else {
     let updateData = await axios.put(
-        `http://localhost:8080/creditCard/editCard/${cardData.id}`,
+        `${process.env.REACT_APP_BACKEND_URL}/creditCard/editCard/${cardData.id}`,
         newcard
       );
 
-      console.log('updae',updateData)
    }
     setNewCard({
       cardname: "",
@@ -48,7 +47,6 @@ function NewCard({ title, cardData, handleCard, getData,options}) {
    
   };
 
-  console.log('options',options)
   return ReactDOM.createPortal(
     <div className={Styles.overlay}>
       <div className={Styles.card}>

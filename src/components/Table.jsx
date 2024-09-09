@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import Styles from "./Table.module.css";
-import NewCard from "./NewCard";
+import NewCard from "./ModalForms/NewCard";
 import Pagination from "./Pagination";
 
 function Table({ title, data, callDebounce, getData, deleteCard, banks }) {
@@ -45,11 +45,10 @@ function Table({ title, data, callDebounce, getData, deleteCard, banks }) {
         </div>
       )}
       <div className={Styles.labels}>
-      
         <div className={Styles.title}>{title}</div>
         {title === "Credit Card" && (
           <div>
-            <input type="text" placeholder="Search"  onChange={handleSearch} />
+            <input type="text" placeholder="Search" onChange={handleSearch} />
             <button onClick={() => setShowCard(true)}>Add Card</button>
           </div>
         )}
@@ -91,7 +90,9 @@ function Table({ title, data, callDebounce, getData, deleteCard, banks }) {
           })}
         </tbody>
       </table>
-         {data.length===0 && <div className={Styles.nodata}>No Data Found !!</div>}
+      {data.length === 0 && (
+        <div className={Styles.nodata}>No Data Found !!</div>
+      )}
       <Pagination
         totalPages={totalPages}
         handlePage={handlePage}

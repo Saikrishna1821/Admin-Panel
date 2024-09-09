@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import Styles from "./Container.module.css";
 import Table from "./Table";
-import NewCard from "./NewCard";
+import NewCard from "./ModalForms/NewCard";
 import axios from "axios";
 import DeleteForm from "./ModalForms/DeleteForm";
 
@@ -12,22 +12,22 @@ function Container() {
   const [bankdata, setBankData] = useState([]);
   const dropdownValues = useRef(null);
   const [type, setType] = useState("");
-  const [showDeleteForm,setDeleteForm]=useState(false);
+  const [showDeleteForm, setDeleteForm] = useState(false);
 
-  const deleteId=useRef(null)
-
+  const deleteId = useRef(null);
   const getBanksData = async () => {
-    const response = await fetch("http://localhost:8080/bank/getAllBanks");
+    const response = await fetch(
+      `${process.env.REACT_APP_BACKEND_URL}/bank/getAllBanks`
+    );
     let res = await response.json();
     //  originalData.current=[...res];
     setBankData([...res]);
     dropdownValues.current = [...res];
-    console.log("bank data", bankdata);
   };
 
   const getData = async () => {
     const response = await fetch(
-      "http://localhost:8080/creditCard/allCardsDetails"
+      `${process.env.REACT_APP_BACKEND_URL}/creditCard/allCardsDetails`
     );
     let res = await response.json();
     //  originalData.current=[...res];
@@ -49,7 +49,6 @@ function Container() {
       setType("Bank");
     }
   };
-  console.log(dropdownValues.current);
   const debounce = () => {
     let timerId;
     return (value) => {
@@ -70,9 +69,9 @@ function Container() {
 
   const deleteCard = async (id) => {
     setDeleteForm(true);
-    deleteId.current=id;
+    deleteId.current = id;
   };
-  
+
   return (
     <div className={Styles.Container}>
       {showCard && (
@@ -80,7 +79,13 @@ function Container() {
           <NewCard />
         </div>
       )}
-      {showDeleteForm && <DeleteForm getData={getData} setDeleteForm={setDeleteForm} id={deleteId.current}/>} 
+      {showDeleteForm && (
+        <DeleteForm
+          getData={getData}
+          setDeleteForm={setDeleteForm}
+          id={deleteId.current}
+        />
+      )}
       <div className={Styles.labels}>
         <div className={Styles.circle}></div>
         <div>
