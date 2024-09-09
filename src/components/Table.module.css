@@ -1,0 +1,52 @@
+.labels {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+table {
+  width: 100%;
+  border: 1px solid gray;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+th,
+td {
+  text-align: center;
+  padding: 6px;
+  box-shadow: 0px 5px rgba(0, 0, 0, 0.1);
+}
+th {
+  color: white;
+  background-color: black;
+}
+
+button {
+  border-radius: 6%;
+  /* margin: 2px; */
+  color: white;
+  background-color: black;
+  padding: 10px;
+  letter-spacing: 1px;
+  border: none;
+  box-shadow: 2px 2px #bac6cd;
+  /* overflow: hidden; */
+  margin: 2px;
+}
+
+.labels input {
+  width: 200px;
+  padding: 8px;
+}
+
+.title {
+  font-weight: bold;
+  font-size: larger;
+}
+
+.nodata{
+  text-align: center;
+  margin-top: 20px;
+  font-weight: bold;
+}

@@ -1,0 +1,49 @@
+.Container{
+    border: 2px solid black;
+    margin: 10px;
+    height: max-content;
+    border-radius: 14px;
+    padding-bottom: 58px;
+}
+.labels{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    margin-left: 15px;
+    margin-top: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.dialogbox
+{
+    
+
+    display: flex;
+    align-items: center;
+    justify-content: center ;
+    height: 100px;
+
+}
+
+.circle{
+    border: 5px solid black;
+    padding: 13px;
+    border-radius: 100%;
+  }
+
+  .inactive{
+    border-radius: 6%;
+    /* margin: 2px; */
+    /* color: white; */
+    padding: 10px;
+    letter-spacing: 1px;
+    border: none;
+    box-shadow: 2px 2px #bac6cd;
+    /* overflow: hidden; */
+    background-color: aliceblue;
+    color: black;
+    margin: 2px;
+  }
+
+  

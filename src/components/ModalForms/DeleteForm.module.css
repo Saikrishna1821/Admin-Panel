@@ -1,0 +1,28 @@
+.overlay{
+    top:0;
+    left: 0; 
+    right: 0;
+    bottom: 0;
+    position:fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     
+    margin-bottom: 100px;
+
+
+
+}
+
+.container{
+    border: 1px solid black;
+    padding: 37px;
+    background-color: white;
+}
+.btns{
+    display: flex;
+    justify-content: space-between;
+}
+.label{
+    margin-top: -19px;
+}
