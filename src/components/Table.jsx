@@ -78,7 +78,7 @@ function Table({ title, data, callDebounce, getData, deleteCard, banks }) {
 
                 {title === "Credit Card" && (
                   <>
-                    <td>{row.enabled}</td>{" "}
+                    <td><input type="checkbox" checked={row.enabled} readOnly/></td>{" "}
                     <td>
                       <button onClick={() => handleEdit(row)}>Edit</button>
                       <button onClick={() => deleteCard(row.id)}>Delete</button>
